@@ -40,7 +40,7 @@ pipeline {
                         currentBuild.result = 'SUCCESS'
                     } else {
                         currentBuild.result = 'FAILURE'
-                        error("Request to Flask service failed. Response: ${response.stdout}")
+                        error("Request to Flask service failed. Response: ${response}")
                     }
                 }
             }
