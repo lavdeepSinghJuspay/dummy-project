@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Start your Flask service in the background
-                    sh 'python3 app.py & ;'
+                    sh 'python3 app.py &'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Wait for some time to ensure that the service has started
-                    sleep 10
+                    sleep 10;
                 }
             }
         }
