@@ -9,7 +9,7 @@ try:
         exit(0)
     else:
         print('Request to Flask service failed.')
-        print(f'\nStatus Code: {response.status_code}')
+        print(f'\nStatus Code: {response.status_code}', flush=True)
         exit(1)
 except requests.exceptions.RequestException as e:
     print(f'Error making the request: {str(e)}')
