@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Wait for some time to ensure that the service has started
-                    sleep 20
+                    sleep 10
                 }
             }
         }
