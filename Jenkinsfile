@@ -9,6 +9,11 @@ pipeline {
                 }
             }
         }
+        stage('Install Python') {
+            steps {
+                sh 'bash install_python.sh'
+            }
+        }
         stage('Build') {
             steps {
                 // Build the project using the Makefile
