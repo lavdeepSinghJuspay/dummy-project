@@ -21,6 +21,20 @@ pipeline {
             }
         }
     }
+    stage('Make HTTP Request') {
+            steps {
+                script {
+                    // Use the requests library to make an HTTP GET request to your Flask service
+                    def response = sh(script: 'python make_request.py', returnStatus: true)
+                    
+                    if (response == 0) {
+                        currentBuild.result = 'SUCCESS'
+                    } else {
+                        currentBuild.result = 'FAILURE'
+                    }
+                }
+            }
+        }
     post {
         always {
             // Stop the server after the build
