@@ -20,8 +20,7 @@ pipeline {
                 sh 'make start-server'
             }
         }
-    }
-    stage('Make HTTP Request') {
+        stage('Make HTTP Request') {
             steps {
                 script {
                     // Use the requests library to make an HTTP GET request to your Flask service
@@ -35,6 +34,7 @@ pipeline {
                 }
             }
         }
+    }
     post {
         always {
             // Stop the server after the build
@@ -42,3 +42,4 @@ pipeline {
         }
     }
 }
+
