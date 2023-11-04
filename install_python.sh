@@ -8,6 +8,8 @@ fi
 # Update Homebrew
 brew update
 
+pip install -r requirements.txt
+
 # Install Python 3
 brew install python@3
 
