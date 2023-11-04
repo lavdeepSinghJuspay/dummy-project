@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Start your Flask service in the background
-                    sh 'python3 app.py &'
+                    sh 'python3 app.py & ;'
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Use the requests library to make an HTTP GET request to your Flask service
-                    def response = sh(script: 'python3 make_request.py', returnStatus: true, returnStdout: true)
+                    def response = sh(script: 'python3 make_request.py;', returnStatus: true, returnStdout: true)
                     
                     if (response == 0) {
                         currentBuild.result = 'SUCCESS'
