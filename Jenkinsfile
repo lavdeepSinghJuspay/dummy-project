@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Wait for some time to ensure that the service has started
-                    sleep 10
+                    sleep 20
                 }
             }
         }
@@ -40,6 +40,7 @@ pipeline {
                         currentBuild.result = 'SUCCESS'
                     } else {
                         currentBuild.result = 'FAILURE'
+                        error("Request to Flask service failed. Response: ${response.stdout}")
                     }
                 }
             }
