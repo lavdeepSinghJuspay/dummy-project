@@ -49,7 +49,7 @@ pipeline {
     post {
         always {
             // Stop the server after the build
-            sh 'pkill -f "python3 app.py"'
+            sh(script: 'pkill -f "python3 app.py"', returnStatus: true, returnStdout: true)
         }
     }
 }
